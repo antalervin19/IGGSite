@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     margin: 0;
@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
+    height: 300vh;
     font-family: 'Inter', sans-serif;
 }
 
@@ -28,6 +28,7 @@ header {
     justify-content: center;
     transition: height 0.3s ease-in-out;
     text-align: center;
+    position: relative;
 }
 
 header:hover {
@@ -38,7 +39,7 @@ a {
     text-decoration: none;
 }
 
-p {
+header p {
     font-weight: 900;
     font-size: clamp(24px, 4vw, 36px);
     background: linear-gradient(to right, 
@@ -55,8 +56,63 @@ p {
     user-select: none;   
 }
 
+/* For the content text, make it white without any gradient */
+.content p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    color: white;  /* Set text color to white for content */
+    cursor: default; /* Ensure no pointer cursor in content */
+    user-select: none;
+}
+
+.header-buttons {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    user-select: none;
+}
+
+.header-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.header-btn:hover {
+    color: #0561B1;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
 @media (max-width: 600px) {
     header {
         font-size: clamp(20px, 5vw, 32px);
+    }
+
+    .header-btn {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .content p {
+        font-size: 18px;
     }
 }
