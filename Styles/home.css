@@ -56,15 +56,38 @@ header p {
     user-select: none;   
 }
 
-/* For the content text, make it white without any gradient */
 .content p {
-    font-weight: 400;
-    font-size: 24px;
+    font-weight: 900;
+    font-size: 30px;
     line-height: 1.5;
-    color: white;  /* Set text color to white for content */
-    cursor: default; /* Ensure no pointer cursor in content */
+    color: white;
+    cursor: default;
     user-select: none;
 }
+
+.line-1, .line-2, .line-3 {
+    transition: color 0.3s ease;
+}
+
+.line-1, .line-2, .line-3 { 
+    color: white;
+}
+
+.line-1:hover {
+    color: #0561B1;
+    text-shadow: 0 0 5px #0561B1, 0 0 10px #0561B1;
+}
+
+.line-2:hover {
+    color: #1839B2;
+    text-shadow: 0 0 5px #1839B2, 0 0 10px #1839B2;
+}
+
+.line-3:hover {
+    color: #C25F0F;
+    text-shadow: 0 0 5px #C25F0F, 0 0 10px #C25F0F;
+}
+
 
 .header-buttons {
     position: absolute;
