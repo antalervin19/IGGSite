@@ -26,9 +26,9 @@
                 <ul>
                     <li><a href="https://www.iggames.eu" class="active">HOME</a></li>
                     <li><a href="https://www.iggames.eu/about">ABOUT</a></li>
-                    <li><a href="https://steamcommunity.com/groups/InfinityGlyphGames">STEAM</a></li>
-                    <li><a href="https://discord.gg/dYf2GC5VjB">DISCORD</a></li>
-                    <li><a href="https://www.patreon.com/c/InfinityGlyphGames">DONATE</a></li>
+                    <li><a target="_blank" href="https://steamcommunity.com/groups/InfinityGlyphGames">STEAM</a></li>
+                    <li><a target="_blank" href="https://discord.gg/dYf2GC5VjB">DISCORD</a></li>
+                    <li><a target="_blank" href="https://www.patreon.com/c/InfinityGlyphGames">DONATE</a></li>
                 </ul>
             </nav>
             <button class="mobile-nav-toggle">☰</button>
@@ -149,18 +149,27 @@
     
             setInterval(changeText, 3000);
     
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwdaVqEfcqfVGA0-GqT1EIJlbfYy_k8bFQBC_XaXeYEC1Ec9_W2IK6KGxxt0MGvK5T0/exec';
-    
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyalZFPJpg4QVy1uGRICfEtm9rCKsBrreMFhy7cNiDV2K5rD7FNXG4f13izqy9a5ndy/exec';
+
+            let cooldown = false;
+
             document.getElementById('emailForm').addEventListener('submit', function(event) {
                 event.preventDefault();
+
                 const email = document.getElementById('email').value;
                 const consent = document.getElementById('consent').checked;
-    
-                if (email && consent) {
+
+                if (email && consent && !cooldown) {
                     saveEmailToSheet(email);
+                    cooldown = true;
+                    setTimeout(() => {
+                        cooldown = false;
+                    }, 30000);
+                } else if (cooldown) {
+                    alert('Please wait 30 seconds before submitting again.');
                 }
             });
-    
+
             function saveEmailToSheet(email) {
                 fetch(scriptUrl, {
                     method: 'POST',
@@ -169,10 +178,15 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
+                .then(response => response.text())
+                .then(text => {
+                    alert(text);
+                })
                 .catch(error => {
                     console.error('Error:', error);
                 });
             }
+
         });
     </script>
 </body>

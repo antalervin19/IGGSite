@@ -244,7 +244,13 @@ nav ul li a:hover, nav ul li a.active {
     object-fit: cover;
     object-position: center;
     display: block;
+    margin: auto;
 }
+
+img {
+    vertical-align: middle;
+}
+
 
 .member-info {
     text-align: center;
