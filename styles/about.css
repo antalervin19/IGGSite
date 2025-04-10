@@ -12,7 +12,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -57,6 +56,7 @@ nav ul li a:hover, nav ul li a.active {
     color: #ffde00;
 }
 
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -188,48 +188,73 @@ nav ul li a:hover, nav ul li a.active {
     box-shadow: 0 0 15px rgba(255, 222, 0, 0.5);
 }
 
-.games {
+.team {
     background-color: #0f0f0f;
     padding: 6rem 2rem 4rem;
 }
 
-.games h2 {
+.team h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.game-card {
+.team-member {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    max-width: 300px;
     transition: transform 0.3s ease;
 }
 
-.game-card:hover {
+.team-member:hover {
     transform: translateY(-10px);
 }
 
-.game-image {
+.member-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 3px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
     background-color: #222;
-    aspect-ratio: 1/1;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.game-info h3 {
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.member-info {
+    text-align: center;
+}
+
+.member-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.game-info p {
+.member-info p {
     color: #aaa;
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
@@ -300,6 +325,7 @@ nav ul li a:hover, nav ul li a.active {
     box-shadow: 0 0 15px rgba(255, 222, 0, 0.5);
 }
 
+/* Footer */
 footer {
     background-color: #000;
     padding: 2rem;
@@ -316,6 +342,7 @@ footer {
     color: #777;
 }
 
+/* Responsive */
 @media (max-width: 1200px) {
     .hero-text {
         margin-right: 0;
@@ -329,18 +356,18 @@ footer {
         right: 0;
     }
     
-    .games-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .team-grid {
+        gap: 4rem;
     }
 }
 
 @media (max-width: 992px) {
-    .games-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .hero-text h1 {
         font-size: 2.2rem;
+    }
+    
+    .team-grid {
+        gap: 3rem;
     }
 }
 
@@ -365,21 +392,18 @@ footer {
         right: 0;
     }
     
-    .games-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
     }
     
     nav ul {
-        display: none;
+        display: none; /* Would need JS for mobile menu toggle */
     }
 }
 
 @media (max-width: 576px) {
-    .games-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .hero-text h1 {
         font-size: 1.8rem;
     }
@@ -387,8 +411,13 @@ footer {
     .trailer-container {
         aspect-ratio: 16/9;
     }
+    
+    .team-member {
+        max-width: 250px;
+    }
 }
 
+/* Mobile Navigation (would need JS implementation) */
 .mobile-nav-toggle {
     display: none;
 }

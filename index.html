@@ -3,34 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>InfinityGlyphGames</title>
-    <meta property="og:title" content="Infinity Glyph Games™">
-    <meta property="og:description" content="We create games and software. Explore the world of IGGames and join our adventure!">
-    <meta property="og:url" content="https://www.iggames.eu">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="Styles/home.css">
-    <script src="Scripts/home.js" defer></script>
-
-    <link rel="icon" href="Resources/SiteLogo.png" type="image/png">
+    <title>Infinity Glyph Games</title>
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="icon" href="../resources/siteicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="main-header">
-        <a href="https://www.iggames.eu">
-            <p>Infinity Glyph Games™</p>
-        </a>
-        <div class="header-buttons">
-            <button class="header-btn">HOME</button>
-            <button class="header-btn">ABOUT</button>
-            <button class="header-btn">CONTACT</button>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="https://www.iggames.eu">
+                    <img src="../resources/siteicon.png" alt="Infinity Glyph Games Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://www.iggames.eu" class="active">HOME</a></li>
+                    <li><a href="https://www.iggames.eu/about">ABOUT</a></li>
+                    <li><a href="https://steamcommunity.com/groups/InfinityGlyphGames">STEAM</a></li>
+                    <li><a href="https://discord.gg/dYf2GC5VjB">DISCORD</a></li>
+                    <li><a href="https://www.patreon.com/c/InfinityGlyphGames">DONATE</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle">☰</button>
         </div>
     </header>
-    
-    <div class="content">
-        <p><span class="line-1">This is Infinity Glyph Games™</span><br>
-        <span class="line-2">We make games and software</span><br>
-        <span class="line-3">This site is Work-In-Progress...</span></p>
-    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="trailer-container">
+                <div class="video-placeholder">
+                    <button class="play-button">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M8 5v14l11-7z" fill="white"></path>
+                        </svg>
+                        <span>WATCH TRAILER</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1>
+                    <span class="static-text">We create</span>
+                    <span class="dynamic-text">
+                        <span class="dynamic-words">games</span>
+                    </span>
+                </h1>
+                <a href="#games" class="explore-btn">EXPLORE</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="games">
+        <h2>OUR GAMES</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-image"></div>
+                <div class="game-info">
+                    <h3>UrbexCAM</h3>
+                    <p>Developer: RockstarCreative</p>
+                    <p>Created: 2024 December 29th</p>
+                    <p>State: Under Development</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="game-image"></div>
+                <div class="game-info">
+                    <h3>The Swing</h3>
+                    <p>Developer: RockstarCreative</p>
+                    <p>Created: 2025 March 5th</p>
+                    <p>State: Unknown</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="game-image"></div>
+                <div class="game-info">
+                    <h3>Day 10</h3>
+                    <p>Developer: antalervin19</p>
+                    <p>Created: 2024 November 20th</p>
+                    <p>State: Under Development</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="game-image"></div>
+                <div class="game-info">
+                    <h3>Physics Project</h3>
+                    <p>Developer: antalervin19</p>
+                    <p>Created: 2025 January 16th</p>
+                    <p>State: Under Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>STAY UP TO DATE</h2>
+        <form>
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" id="email" placeholder="">
+            <div class="consent">
+                <input type="checkbox" id="consent">
+                <label for="consent">I agree that I want to receive emails about upcoming games and discounts.</label>
+            </div>
+            <button type="submit" class="signup-btn">SIGN UP</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Infinity Glyph Games™</h3>
+                <p>© 2025 Infinity Glyph Games™. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const exploreBtn = document.querySelector('.explore-btn');
+            exploreBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetSection = document.querySelector('#games');
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            const words = ['games', 'software', 'your world'];
+            const dynamicText = document.querySelector('.dynamic-words');
+            let currentIndex = 0;
+            
+            function changeText() {
+                dynamicText.style.transform = 'translateY(-100%)';
+                dynamicText.style.opacity = '0';
+                
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % words.length;
+                    dynamicText.textContent = words[currentIndex];
+                    
+                    dynamicText.style.transform = 'translateY(100%)';
+                    
+                    setTimeout(() => {
+                        dynamicText.style.transform = 'translateY(0)';
+                        dynamicText.style.opacity = '1';
+                    }, 50);
+                }, 500);
+            }
+            
+            dynamicText.textContent = words[0];
+            dynamicText.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            dynamicText.style.opacity = '1';
+            
+            setInterval(changeText, 3000);
+        });
+      </script>
 </body>
 </html>
