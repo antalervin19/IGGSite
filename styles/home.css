@@ -148,14 +148,16 @@ nav ul li a:hover, nav ul li a.active {
     height: 3.5rem;
     overflow: hidden;
     display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .dynamic-word {
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 0;
+    transform: translate(-50%, 100%);
     opacity: 0;
-    transform: translateY(100%);
     transition: transform 0.5s ease, opacity 0.5s ease;
     white-space: nowrap;
 }
@@ -180,7 +182,7 @@ nav ul li a:hover, nav ul li a.active {
     display: inline-block;
     transition: all 0.3s;
     position: relative;
-    right: -5%;
+    right: 0%;
 }
 
 .explore-btn:hover {
