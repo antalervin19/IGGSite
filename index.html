@@ -35,6 +35,16 @@
         </div>
     </header>
 
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="https://www.iggames.eu" class="active">HOME</a></li>
+            <li><a href="https://www.iggames.eu/about">ABOUT</a></li>
+            <li><a target="_blank" href="https://steamcommunity.com/groups/InfinityGlyphGames">STEAM</a></li>
+            <li><a target="_blank" href="https://discord.gg/dYf2GC5VjB">DISCORD</a></li>
+            <li><a target="_blank" href="https://www.patreon.com/c/InfinityGlyphGames">DONATE</a></li>
+        </ul>
+    </div>
+
     <section class="hero">
         <div class="hero-content">
             <div class="trailer-container">
@@ -187,6 +197,19 @@
                 });
             }
 
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            mobileNavToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

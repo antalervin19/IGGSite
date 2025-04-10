@@ -394,7 +394,7 @@ footer {
         text-align: center;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center horizontally */
+        align-items: center;
     }
     
     .explore-btn {
@@ -439,4 +439,45 @@ footer {
         font-size: 1.5rem;
         cursor: pointer;
     }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ffde00;
 }
