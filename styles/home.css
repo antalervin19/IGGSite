@@ -223,9 +223,19 @@ nav ul li a:hover, nav ul li a.active {
 
 .game-image {
     background-color: #222;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 1rem;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
 }
 
 .game-info h3 {
@@ -272,13 +282,19 @@ nav ul li a:hover, nav ul li a.active {
 
 .software-image {
     background-color: #222;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 1rem;
+    max-width: 300px;
+    overflow: hidden;
 }
 
 .software-image img {
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
 }
 
 .software-info h3 {
