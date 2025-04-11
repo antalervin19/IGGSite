@@ -40,12 +40,10 @@
         <div class="hero-content">
             <div class="trailer-container">
                 <div class="video-placeholder">
-                    <button class="play-button">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                            <path d="M8 5v14l11-7z" fill="white"></path>
-                        </svg>
-                        <span>TRAILER UNAVAILABLE</span>
-                    </button>
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/toI-gr4whZQ" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
             </div>
             <div class="hero-text">
@@ -123,7 +121,7 @@
             <input type="email" id="email" placeholder="">
             <div class="consent">
                 <input type="checkbox" id="consent">
-                <label for="consent">I agree that I want to receive emails about upcoming games and discounts.</label>
+                <label for="consent">I agree that i want to receive emails about upcoming games and discounts.</label>
             </div>
             <button type="submit" class="signup-btn">SIGN UP</button>
         </form>
@@ -147,7 +145,7 @@
                 targetSection.scrollIntoView({ behavior: 'smooth' });
             });
 
-            const words = ['games', 'software', 'your world'];
+            const words = ['games', 'software', 'our world!'];
             const dynamicText = document.querySelector('.dynamic-words');
             let currentIndex = 0;
             
