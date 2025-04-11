@@ -182,7 +182,7 @@ nav ul li a:hover, nav ul li a.active {
     display: inline-block;
     transition: all 0.3s;
     position: relative;
-    right: -5%;
+    right: -1%;
 }
 
 .explore-btn:hover {
@@ -308,6 +308,8 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
+
+/* NEWS */
 
 .newsletter {
     padding: 5rem 2rem;

@@ -169,6 +169,8 @@ nav ul li a:hover, nav ul li a.active {
     opacity: 0;
 }
 
+/* EXPLORE */
+
 .explore-btn {
     background-color: #ffde00;
     color: #000;
@@ -179,13 +181,15 @@ nav ul li a:hover, nav ul li a.active {
     display: inline-block;
     transition: all 0.3s;
     position: relative;
-    right: -5%;
+    right: -1%;
 }
 
 .explore-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 222, 0, 0.5);
 }
+
+/* TEAM GRID */
 
 .team {
     background-color: #0f0f0f;
@@ -260,6 +264,8 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
+
+/* NEWS */
 
 .newsletter {
     padding: 5rem 2rem;
