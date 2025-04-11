@@ -219,7 +219,6 @@
                 mobileMenu.classList.toggle('active');
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (!mobileMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
                     mobileMenu.classList.remove('active');
