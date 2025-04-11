@@ -232,16 +232,18 @@ nav ul li a:hover, nav ul li a.active {
     position: relative;
     background-color: #222;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .member-image img {
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     object-fit: cover;
     object-position: center;
     display: block;
+    margin: auto;
+    position: absolute;
+    left: -9px;
 }
 
 .member-info {
