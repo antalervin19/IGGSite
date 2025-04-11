@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Infinity Glyph Games</title>
 
     <meta property="og:title" content="Infinity Glyph Games™">
@@ -11,7 +12,7 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="./styles/home.css">
-    <link rel="icon" href="./resources/siteicon.png">
+    <link rel="icon" href="../resources/siteicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +20,7 @@
         <div class="navbar">
             <div class="logo">
                 <a href="https://www.iggames.eu">
-                    <img src="./resources/siteicon.png" alt="Infinity Glyph Games Logo">
+                    <img src="../resources/siteicon.png" alt="Infinity Glyph Games Logo">
                 </a>
             </div>
             <nav>
@@ -35,26 +36,14 @@
         </div>
     </header>
 
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="https://www.iggames.eu" class="active">HOME</a></li>
-            <li><a href="https://www.iggames.eu/about">ABOUT</a></li>
-            <li><a target="_blank" href="https://steamcommunity.com/groups/InfinityGlyphGames">STEAM</a></li>
-            <li><a target="_blank" href="https://discord.gg/dYf2GC5VjB">DISCORD</a></li>
-            <li><a target="_blank" href="https://www.patreon.com/c/InfinityGlyphGames">DONATE</a></li>
-        </ul>
-    </div>
-
     <section class="hero">
         <div class="hero-content">
             <div class="trailer-container">
                 <div class="video-placeholder">
-                    <button class="play-button">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                            <path d="M8 5v14l11-7z" fill="white"></path>
-                        </svg>
-                        <span>TRAILER UNAVAILABLE</span>
-                    </button>
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/toI-gr4whZQ" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
             </div>
             <div class="hero-text">
@@ -63,7 +52,7 @@
                     <span class="dynamic-text">
                         <span class="dynamic-words">games</span>
                     </span>
-                </h1>                
+                </h1>
                 <a href="#games" class="explore-btn">EXPLORE</a>
             </div>
         </div>
@@ -73,7 +62,9 @@
         <h2>OUR GAMES</h2>
         <div class="games-grid">
             <div class="game-card">
-                <div class="game-image"></div>
+                <div class="game-image">
+                    <img src="https://placehold.co/200x200" alt="Placeholder Image">
+                </div>
                 <div class="game-info">
                     <h3>UrbexCAM</h3>
                     <p>Developer: RockstarCreative</p>
@@ -82,7 +73,9 @@
                 </div>
             </div>
             <div class="game-card">
-                <div class="game-image"></div>
+                <div class="game-image">
+                    <img src="https://placehold.co/200x200" alt="Placeholder Image">
+                </div>
                 <div class="game-info">
                     <h3>The Swing</h3>
                     <p>Developer: RockstarCreative</p>
@@ -91,7 +84,9 @@
                 </div>
             </div>
             <div class="game-card">
-                <div class="game-image"></div>
+                <div class="game-image">
+                    <img src="https://placehold.co/200x200" alt="Placeholder Image">
+                </div>
                 <div class="game-info">
                     <h3>Day 10</h3>
                     <p>Developer: antalervin19</p>
@@ -102,14 +97,31 @@
         </div>
     </section>
 
+    <section id="software" class="software">
+        <h2>OUR SOFTWARES</h2>
+        <div class="softwares-grid">
+            <div class="software-card">
+                <div class="software-image">
+                    <img src="https://placehold.co/404" alt="Placeholder Image">
+                </div>
+                <div class="software-info">
+                    <h3>404</h3>
+                    <p>Developer: InfinityGlyphGames</p>
+                    <p>Created: NaN</p>
+                    <p>State: Unknown</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="newsletter">
         <h2>STAY UP TO DATE</h2>
-        <form id="emailForm">
+        <form>
             <label for="email">EMAIL ADDRESS</label>
-            <input type="email" id="email" placeholder="" required>
+            <input type="email" id="email" placeholder="">
             <div class="consent">
-                <input type="checkbox" id="consent" required>
-                <label for="consent">I agree that I want to receive emails about upcoming games and discounts.</label>
+                <input type="checkbox" id="consent">
+                <label for="consent">I agree that i want to receive emails about upcoming games and discounts.</label>
             </div>
             <button type="submit" class="signup-btn">SIGN UP</button>
         </form>
