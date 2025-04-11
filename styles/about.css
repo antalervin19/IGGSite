@@ -31,7 +31,7 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 50px;
 }
 
 nav ul {
@@ -391,6 +391,20 @@ footer {
     
     .hero-text {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dynamic-text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .static-text {
+        text-align: center;
+        margin: 0 auto;
     }
     
     .explore-btn {
