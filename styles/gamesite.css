@@ -289,9 +289,17 @@ footer {
     .explore-btn {
         right: 0;
     }
+    
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 992px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .hero-text h1 {
         font-size: 2.2rem;
     }
@@ -315,27 +323,27 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
     
-    .hero-text h1 {
-        text-align: center;
-        justify-content: center;
-        padding-right: 0;
+    .explore-btn {
+        right: 0;
     }
     
-    .viewonsteam-btn {
-        position: static;
-        margin: 0 auto;
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
-
-    .static-text {
-        text-align: center;
-        margin: 0 auto;
+    
+    nav ul {
+        display: none;
     }
 }
 
 @media (max-width: 576px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .hero-text h1 {
         font-size: 1.8rem;
     }
