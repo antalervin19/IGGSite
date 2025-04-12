@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <section id="software" class="software">
+    <section id="software" class="softwares">
         <h2>OUR SOFTWARES</h2>
         <div class="softwares-grid">
             <div class="software-card">
@@ -171,6 +171,57 @@
             dynamicText.style.opacity = '1';
             
             setInterval(changeText, 3000);
+
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyalZFPJpg4QVy1uGRICfEtm9rCKsBrreMFhy7cNiDV2K5rD7FNXG4f13izqy9a5ndy/exec';
+
+            let cooldown = false;
+
+            document.getElementById('emailForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const consent = document.getElementById('consent').checked;
+
+                if (email && consent && !cooldown) {
+                    saveEmailToSheet(email);
+                    cooldown = true;
+                    setTimeout(() => {
+                        cooldown = false;
+                    }, 30000);
+                } else if (cooldown) {
+                    alert('Please wait 30 seconds before submitting again.');
+                }
+            });
+
+            function saveEmailToSheet(email) {
+                fetch(scriptUrl, {
+                    method: 'POST',
+                    body: new URLSearchParams({ 'email': email }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(response => response.text())
+                .then(text => {
+                    alert(text);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            mobileNavToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
         });
       </script>
 </body>
