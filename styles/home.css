@@ -227,6 +227,7 @@ nav ul li a:hover, nav ul li a.active {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .game-card:hover {
