@@ -61,7 +61,7 @@
     <section id="games" class="games">
         <h2>OUR GAMES</h2>
         <div class="games-grid">
-            <div class="game-card">
+            <div class="game-card" data-url="https://www.iggames.eu/urbexcam">
                 <div class="game-image">
                     <img src="https://placehold.co/200x200" alt="Placeholder Image">
                 </div>
@@ -72,7 +72,7 @@
                     <p>State: Under Development</p>
                 </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-url="https://www.iggames.eu/the-swing">
                 <div class="game-image">
                     <img src="https://placehold.co/200x200" alt="Placeholder Image">
                 </div>
@@ -83,7 +83,7 @@
                     <p>State: Unknown</p>
                 </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" data-url="https://www.iggames.eu/day-10">
                 <div class="game-image">
                     <img src="https://placehold.co/200x200" alt="Placeholder Image">
                 </div>
@@ -97,6 +97,7 @@
         </div>
     </section>
 
+    <!--
     <section id="software" class="softwares">
         <h2>OUR SOFTWARES</h2>
         <div class="softwares-grid">
@@ -113,6 +114,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <section class="newsletter">
         <h2>STAY UP TO DATE</h2>
@@ -220,6 +222,16 @@
                 if (!mobileMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
                     mobileMenu.classList.remove('active');
                 }
+            });
+
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const url = card.getAttribute('data-url');
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
             });
         });
     </script>

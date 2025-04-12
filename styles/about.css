@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    user-select: none;
 }
 
 body {
@@ -188,7 +189,7 @@ nav ul li a:hover, nav ul li a.active {
     text-decoration: none;
     padding: 1rem 2.5rem;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 900;
     display: inline-block;
     transition: all 0.3s;
     position: relative;
