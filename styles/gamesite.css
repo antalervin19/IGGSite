@@ -169,7 +169,7 @@ nav ul li a:hover, nav ul li a.active {
     right: 3%;
 }
 
-.explore-btn:hover {
+.viewonsteam-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 222, 0, 0.5);
 }
@@ -323,6 +323,16 @@ footer {
     
     nav ul {
         display: none;
+    }
+
+    .viewonsteam-btn {
+        position: static;
+        margin: 0 auto;
+    }
+
+    .static-text {
+        text-align: center;
+        margin: 0 auto;
     }
 }
 
