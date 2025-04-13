@@ -28,6 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -39,10 +40,12 @@ header {
 nav ul {
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
 }
 
 nav ul li a {
@@ -68,22 +71,32 @@ nav ul li a:hover, nav ul li a.active {
 
 .hero-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
     position: relative;
+    gap: 2rem;
+}
+
+.trailer-container,
+.hero-text {
+    flex: 1 1 45%;
+    min-width: 300px;
 }
 
 .trailer-container {
-    flex: 1;
-    padding-right: 2rem;
-    margin-left: -3%;
-    max-width: 45%;
+    padding-right: 1rem;
+}
+
+.hero-text {
+    text-align: right;
 }
 
 .video-placeholder {
+    position: relative;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     aspect-ratio: 16/9;
@@ -93,8 +106,8 @@ nav ul li a:hover, nav ul li a.active {
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .video-placeholder iframe.youtube-video {
@@ -132,15 +145,8 @@ nav ul li a:hover, nav ul li a.active {
     letter-spacing: 1px;
 }
 
-.hero-text {
-    flex: 1;
-    text-align: right;
-    margin-right: -5%;
-    max-width: 45%;
-}
-
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     line-height: 1.4;
     margin-bottom: 2rem;
     display: flex;
@@ -193,8 +199,8 @@ nav ul li a:hover, nav ul li a.active {
     font-weight: 900;
     display: inline-block;
     transition: all 0.3s;
-    position: relative;
-    right: 0%;
+    align-self: flex-end;
+    margin-top: 1rem;
 }
 
 .explore-btn:hover {
@@ -237,7 +243,6 @@ nav ul li a:hover, nav ul li a.active {
 .game-image {
     background-color: #222;
     aspect-ratio: 1/1;
-    aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 1rem;
     max-width: 250px;
@@ -245,14 +250,12 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .game-image img {
-    
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0;
     display: block;
 }
-
 
 .game-info h3 {
     font-size: 1.5rem;
@@ -299,7 +302,6 @@ nav ul li a:hover, nav ul li a.active {
 .software-image {
     background-color: #222;
     aspect-ratio: 1/1;
-    aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 1rem;
     max-width: 250px;
@@ -307,7 +309,6 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .software-image img {
-    
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -409,26 +410,49 @@ footer {
     color: #777;
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 1200px) {
-    .hero-text {
-        margin-right: 0;
+    .hero-content {
+        padding: 0 1rem;
     }
     
     .trailer-container {
-        margin-left: 0;
+        padding-right: 0;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        justify-content: center;
     }
     
     .explore-btn {
-        right: 0;
+        align-self: center;
     }
     
-    .games-grid {
+    .games-grid,
+    .softwares-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 992px) {
-    .games-grid {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .trailer-container,
+    .hero-text {
+        flex: 1 1 100%;
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    .games-grid,
+    .softwares-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -438,30 +462,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        gap: 3rem;
-    }
-    
-    .trailer-container, .hero-text {
-        width: 100%;
-        max-width: 100%;
-        padding-right: 0;
-        margin: 0;
-    }
-    
-    .hero-text {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .explore-btn {
-        right: 0;
-    }
-    
-    .games-grid {
+    .games-grid,
+    .softwares-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
@@ -469,19 +471,21 @@ footer {
     nav ul {
         display: none;
     }
+    
+    .game-image,
+    .software-image {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
-    .games-grid {
+    .games-grid,
+    .softwares-grid {
         grid-template-columns: 1fr;
     }
     
     .hero-text h1 {
         font-size: 1.8rem;
-    }
-    
-    .trailer-container {
-        aspect-ratio: 16/9;
     }
 }
 
