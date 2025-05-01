@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const imagePaths = [
         '../resources/day-10/DAY10_1.png',
-        '../resources/day-10/DAY10.png',
-        '../resources/day-10/img3.png',
-        '../resources/day-10/img4.png'
+        '../resources/day-10/DAY10.png'
     ];
 
     let currentSlide = 0;
