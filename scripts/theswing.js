@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalNext = document.querySelector('.modal-next');
 
     const imagePaths = [
-        '../resources/urbexcam/img1.png',
-        '../resources/urbexcam/img2.png',
-        '../resources/urbexcam/img3.png',
-        '../resources/urbexcam/img4.png'
+        '../resources/the-swing/img1.png',
+        '../resources/the-swing/img2.png',
+        '../resources/the-swing/img3.png',
+        '../resources/the-swing/img4.png'
     ];
 
     let currentSlide = 0;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const img = document.createElement('img');
         img.src = path;
-        img.alt = 'URBEXCAM Preview';
+        img.alt = 'THE SWING Preview';
 
         slide.appendChild(img);
         slides.appendChild(slide);
