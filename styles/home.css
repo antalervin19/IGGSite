@@ -327,6 +327,78 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 0.3rem;
 }
 
+/* PLAYTESTERS GRID */
+
+.playtester {
+    background-color: #0f0f0f;
+    padding: 6rem 2rem 4rem;
+}
+
+.playtester h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.playtester-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.playtester-member {
+    margin: 0 -4rem;
+}
+
+.playtester-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.playtester-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 3px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    background-color: #222;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.member-info {
+    text-align: center;
+}
+
+.member-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .playtester-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 /* NEWS */
 
 .newsletter {
