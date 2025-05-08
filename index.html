@@ -198,5 +198,62 @@
     </footer>
 
     <script src="./scripts/home.js"></script>
+    <script>
+        async function fetchExchangeRates() {
+            const response = await fetch('https://open.er-api.com/v6/latest/USD');
+            if (!response.ok) throw new Error("Failed to fetch exchange rates");
+            const data = await response.json();
+            return data.rates;
+        }
+
+        async function fetchAndDisplayDonations() {
+            try {
+                const [exchangeRates, donationsResponse] = await Promise.all([
+                    fetchExchangeRates(),
+                    fetch('https://script.google.com/macros/s/AKfycbzHRmwXzXTunXQLmfN1CPnGGIf6y46R2Lv-c653wrfc07ChQ3mmQxi8KCb6EWW5zpvweg/exec')
+                ]);
+
+                if (!donationsResponse.ok) throw new Error("Failed to fetch donations");
+                const donations = await donationsResponse.json();
+
+                let totalUSD = 0;
+
+                donations.forEach(donation => {
+                    const amount = parseFloat(donation.Amount);
+                    const currency = donation.Currency?.toUpperCase() || 'USD';
+
+                    if (isNaN(amount)) return;
+
+                    if (currency === 'USD') {
+                        totalUSD += amount;
+                    } else if (exchangeRates[currency]) {
+                        const usdValue = amount / exchangeRates[currency];
+                        totalUSD += usdValue;
+                    } else {
+                        console.warn(`Unknown currency: ${currency}`);
+                    }
+                });
+
+                const donationElement = document.getElementById('current-donation');
+                donationElement.textContent = `$${totalUSD.toFixed(2)}`;
+
+                const progressFill = document.getElementById('progress-fill');
+                const goalAmount = 100;
+                const percentage = Math.min((totalUSD / goalAmount) * 100, 100);
+                progressFill.style.width = `${percentage}%`;
+
+                if (totalUSD >= goalAmount) {
+                    progressFill.classList.add('goal-reached');
+                }
+            } catch (err) {
+                console.error("Error:", err);
+                document.getElementById('current-donation').textContent = "Error loading";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAndDisplayDonations();
+        });
+    </script>
 </body>
 </html>
