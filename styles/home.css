@@ -241,7 +241,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .game-image {
-    background-color: #222;
+    background-color: rgba(0,0,0,0);
     aspect-ratio: 1/1;
     border-radius: 8px;
     margin-bottom: 1rem;
