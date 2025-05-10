@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const imagePaths = [
         '../resources/the-swing/img1.png',
-        '../resources/the-swing/img2.png',
-        '../resources/the-swing/img3.png',
-        '../resources/the-swing/img4.png'
     ];
 
     let currentSlide = 0;
