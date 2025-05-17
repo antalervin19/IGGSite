@@ -389,7 +389,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .progress-container {
     position: relative;
-    padding: 1rem 0;
+    padding: -10px 0;
 }
 
 .progress-bar {
@@ -438,6 +438,15 @@ nav ul li a:hover, nav ul li a.active {
     color: #fff;
     font-weight: bold;
     font-size: 0.9rem;
+}
+
+.donation-note {
+    color: #b0b0b0;
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
