@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    const words = ['games', 'softwares', 'our world!'];
+    const words = ['games', 'software', 'our world!'];
     const dynamicText = document.querySelector('.dynamic-words');
     let currentIndex = 0;
 
