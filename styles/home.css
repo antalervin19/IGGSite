@@ -476,6 +476,7 @@ nav ul li a:hover, nav ul li a.active {
     letter-spacing: 1px;
 }
 
+/* FIXME: Szöveg összecsúszik, ajánlott egy flex parent használata grid helyett */
 .playtester-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
