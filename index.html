@@ -119,15 +119,15 @@
     </section>
 
     <section class="donation-tracker">
-        <h2>GENERAL SERVER MAINTENANCE & PC UPGRADE (New GPU)</h2>
+        <h2>Unity Assets</h2>
         <p class="donation-note">
-                CEO: @antalervin19 is running a 12yrs old GTX 970 STRIX...
+                We cant make all of our assets.. we sometimes rely on Unity Asset Store.
         </p>
         <div class="donation-container">
             <div class="donation-info">
                 <div class="donation-amount">
                     <span id="current-donation">Loading...</span>
-                    <span class="donation-goal">/ $350 Goal</span>
+                    <span class="donation-goal">/ $50 Goal</span>
                 </div>
                 <a href="https://ko-fi.com/infinityglyphgames" target="_blank" class="donate-btn">DONATE NOW</a>
             </div>
@@ -217,6 +217,7 @@
     </section>
     -->
 
+    <!--
     <section class="newsletter">
         <h2>STAY UP TO DATE</h2>
         <form id="emailForm">
@@ -228,7 +229,7 @@
             </div>
             <button type="submit" class="signup-btn">SIGN UP</button>
         </form>
-    </section>
+    </section>-->
 
     <footer>
         <div class="footer-content">
@@ -280,7 +281,7 @@
                 donationElement.textContent = `$${totalUSD.toFixed(2)}`;
 
                 const progressFill = document.getElementById('progress-fill');
-                const goalAmount = 350;
+                const goalAmount = 50;
                 const percentage = Math.min((totalUSD / goalAmount) * 100, 100);
                 progressFill.style.width = `${percentage}%`;
 
