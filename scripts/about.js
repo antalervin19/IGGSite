@@ -1,3 +1,5 @@
+// NOTE: DOMContentLoaded az nem szükséges, mivel a script a body tag aljáról tölt be
+//       Lásd: https://stackoverflow.com/questions/34807614/should-i-wait-for-domcontentloaded-event-if-i-place-a-script-tag-at-the-end-of-a
 document.addEventListener('DOMContentLoaded', function() {
     const exploreBtn = document.querySelector('.explore-btn');
     exploreBtn.addEventListener('click', function(event) {

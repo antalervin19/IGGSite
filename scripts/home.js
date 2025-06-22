@@ -1,3 +1,5 @@
+// NOTE: DOMContentLoaded az nem szükséges, mivel a script a body tag aljáról tölt be
+//       Lásd: https://stackoverflow.com/questions/34807614/should-i-wait-for-domcontentloaded-event-if-i-place-a-script-tag-at-the-end-of-a
 document.addEventListener('DOMContentLoaded', function() {
     const exploreBtn = document.querySelector('.explore-btn');
     exploreBtn.addEventListener('click', function(event) {
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    const words = ['games', 'softwares', 'our world!'];
+    const words = ['games', 'software', 'our world!'];
     const dynamicText = document.querySelector('.dynamic-words');
     let currentIndex = 0;
 
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const consent = document.getElementById('consent').checked;
 
+        // FIXME: Ez spamelhető. A cooldown-ot át kell vinni szerveroldalra.
         if (email && consent && !cooldown) {
             saveEmailToSheet(email);
             cooldown = true;
